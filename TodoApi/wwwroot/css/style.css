@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 1;
+    padding: 1;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+textarea, input[type="datetime-local"], button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #1c7ca9;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #286286;
+}
+
+hr {
+    margin-top: 20px;
+}
+
+
+

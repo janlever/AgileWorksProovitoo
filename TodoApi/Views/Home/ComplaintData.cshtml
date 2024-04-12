@@ -1,0 +1,44 @@
+@model List<TodoApi.Models.Application>
+
+@functions {
+    string GetRowClass(DateTime deadline)
+    {
+        var timeDifference = deadline - DateTime.Now;
+        if (timeDifference.TotalHours < 1 || timeDifference.TotalSeconds < 0)
+        {
+            return "table-danger"; 
+        }
+        else
+        {
+            return ""; 
+        }
+    }
+}
+
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>Pöördumise Kirjeldus</td>
+            <td>Pöördumise Siestamiskellaaeg</td>
+            <td>Lahendamise Tähtaeg</td>
+            <td>Märgi lahendatuks</td>
+        </tr>
+    </thead>
+
+    @foreach (var x in Model)
+    {
+            <tbody>
+                <tr class="@GetRowClass(x.Deadline)">
+                <td>@x.Description</td>
+                <td>@x.EntryDate</td>
+                <td>@x.Deadline</td>
+                <td>
+                    <form method="post" asp-controller="Home" asp-action="MarkAsDone">
+                        <input type="hidden" name="id" value="@x.ApplicationID" />
+                        <button type="submit" class="btn btn-info">Lahendatud</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>      
+    } 
+</table>

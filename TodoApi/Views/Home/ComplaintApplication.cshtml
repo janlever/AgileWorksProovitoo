@@ -1,0 +1,45 @@
+@model TodoApi.Models.Application
+
+<style>
+    #applicationForm label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    #applicationForm input[type="text"],
+    #applicationForm textarea,
+    #applicationForm input[type="datetime-local"],
+    #applicationForm button[type="submit"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    #applicationForm button[type="submit"] {
+        background-color: #1b6ec2;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+
+
+<h2>Saada kasutajatoele pöördumine:</h2>
+
+<form method="post" id="applicationForm">
+
+    <label asp-for="Description">Kirjeldus:</label>
+    <br>
+    <textarea asp-for="Description" required></textarea>
+    <br>
+    <label asp-for="Deadline">Lahendamise tähtaeg:</label>
+    <br>
+    <input asp-for="Deadline" type="datetime-local" required>
+    <br>
+    <button type="submit">Saada pöördumine</button>
+
+</form>
+<a asp-controller="Home" asp-action="ComplaintData">Vajuta siia, et vaadata pöördumisi.</a>

@@ -1,0 +1,15 @@
+@*
+For more information for enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+
+}
+@model TodoApi.Models.Application
+
+<h2>Teie pöördumine:</h2>
+<p>@Model.Description</p>
+<br>
+<a asp-controller="Home" asp-action="ComplaintApplication">Vajuta siia, et esitada uus pöördumine.</a>
+<br>
+<a asp-controller="Home" asp-action="ComplaintData">Vajuta siia, et vaadata kõiki pöördumisi.</a>
